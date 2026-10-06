@@ -70,27 +70,27 @@ It adds two read-only RPCs and uses your existing imports, with no new secret.
 
 ## Architecture and files
 
-| Files | Purpose |
-| --- | --- |
-| `.env.example`, `.nvmrc`, `package.json`, `package-lock.json` | Environment and dependencies |
-| `vite.config.js`, `wrangler.jsonc` | React/Tailwind integration and single Worker deployment |
-| `eslint.config.js`, `.gitignore` | Code checks and local/generated-file exclusions |
-| `index.html`, `src/main.jsx`, `src/styles.css` | Entry point, 1024px layout, Tailwind |
-| `src/App.jsx`, `src/components/ErrorBoundary.jsx` | Authenticated shell and rendering failures |
-| `src/features/auth/` | Login form and safe sign-in errors |
-| `src/hooks/use-session-status.js`, `src/lib/api.js` | Session verification, timeouts, cancellation, API errors |
-| `src/features/cash/` | Dashboard fetching, cash summary, virtualized obligations |
-| `src/features/forecast/`, `worker/forecast/`, `worker/routes/forecast.js` | Forecast UI, exact calculation engine, authorized GET API |
-| `supabase/migrations/202610060003_forecast.sql`, `docs/FORECAST.md` | Forecast query and model/setup documentation |
-| `src/lib/supabase/browser.js` | Lazy cookie-based browser client |
-| `shared/supabase-config.js` | Configuration validation |
-| `shared/dashboard-contract.js`, `shared/format.js` | Payload validation and exact amount/date formatting |
-| `worker/index.js`, `worker/routes/dashboard.js` | Read-only session and dashboard API routes |
-| `worker/lib/supabase/` | Request-scoped server client, authentication, authorization |
-| `supabase/migrations/202610060001_dashboard.sql` | Additive, authorized dashboard RPC |
-| `supabase/verify-phase2.sql` | Read-only schema/security inspection |
-| `docs/SUPABASE.md` | Exact hosted-project setup steps |
-| `tests/`, `supabase/tests/dashboard.test.sql` | API, formatting, and SQL regression tests |
+| Files                                                                     | Purpose                                                     |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| `.env.example`, `.nvmrc`, `package.json`, `package-lock.json`             | Environment and dependencies                                |
+| `vite.config.js`, `wrangler.jsonc`                                        | React/Tailwind integration and single Worker deployment     |
+| `eslint.config.js`, `.gitignore`                                          | Code checks and local/generated-file exclusions             |
+| `index.html`, `src/main.jsx`, `src/styles.css`                            | Entry point, 1024px layout, Tailwind                        |
+| `src/App.jsx`, `src/components/ErrorBoundary.jsx`                         | Authenticated shell and rendering failures                  |
+| `src/features/auth/`                                                      | Login form and safe sign-in errors                          |
+| `src/hooks/use-session-status.js`, `src/lib/api.js`                       | Session verification, timeouts, cancellation, API errors    |
+| `src/features/cash/`                                                      | Dashboard fetching, cash summary, virtualized obligations   |
+| `src/features/forecast/`, `worker/forecast/`, `worker/routes/forecast.js` | Forecast UI, exact calculation engine, authorized GET API   |
+| `supabase/migrations/202610060003_forecast.sql`, `docs/FORECAST.md`       | Forecast query and model/setup documentation                |
+| `src/lib/supabase/browser.js`                                             | Lazy cookie-based browser client                            |
+| `shared/supabase-config.js`                                               | Configuration validation                                    |
+| `shared/dashboard-contract.js`, `shared/format.js`                        | Payload validation and exact amount/date formatting         |
+| `worker/index.js`, `worker/routes/dashboard.js`                           | Read-only session and dashboard API routes                  |
+| `worker/lib/supabase/`                                                    | Request-scoped server client, authentication, authorization |
+| `supabase/migrations/202610060001_dashboard.sql`                          | Additive, authorized dashboard RPC                          |
+| `supabase/verify-phase2.sql`                                              | Read-only schema/security inspection                        |
+| `docs/SUPABASE.md`                                                        | Exact hosted-project setup steps                            |
+| `tests/`, `supabase/tests/dashboard.test.sql`                             | API, formatting, and SQL regression tests                   |
 
 The browser uses the official Supabase client for login/logout. The Worker verifies
 identity with `auth.getUser()` and separately checks `usuarios_autorizados` before
@@ -162,6 +162,8 @@ preserves dashboard variables on later deploys. Local dotenv values are not auto
 published as Worker bindings. For imports, also run `npx wrangler secret put SUPABASE_SECRET_KEY`.
 Worker logs are enabled. CSV parsing can exceed the Workers Free CPU allowance;
 see [deployment limits](docs/IMPORTS.md#deployment).
+
+Deployment test v.01
 
 ## References
 
