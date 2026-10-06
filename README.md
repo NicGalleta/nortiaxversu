@@ -163,7 +163,7 @@ published as Worker bindings. For imports, also run `npx wrangler secret put SUP
 Worker logs are enabled. CSV parsing can exceed the Workers Free CPU allowance;
 see [deployment limits](docs/IMPORTS.md#deployment).
 
-Deployment test v.01
+Deployment test v.02
 
 ## References
 
