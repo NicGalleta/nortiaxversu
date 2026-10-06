@@ -4,6 +4,13 @@
   "main": "worker/index.js",
   "compatibility_date": "2026-10-05",
   "compatibility_flags": ["nodejs_compat"],
+  
+  "vars": {
+    "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_yPepwtXErVpRLzCTmVcdiQ_ZgCr42MZ",
+    "SUPABASE_URL": "https://yilbhsunwfgqwozkfuhn.supabase.co"
+  },
+
+
   "keep_vars": true,
   "assets": {
     "binding": "ASSETS",
