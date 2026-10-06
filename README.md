@@ -96,7 +96,7 @@ Las respuestas de la API incluyen `X-Request-Id`; los errores también lo incluy
 | Cambia la importación durante una consulta o simulación | Se exige actualizar los datos para evitar combinar versiones.                                                                                      |
 | El modelo falla                                         | La interpretación se completa manualmente y la explicación conserva el resumen calculado.                                                          |
 
-No hay limpieza automática de los archivos originales archivados. Los detalles de reintentos, concurrencia y recuperación están en [la guía de importaciones](docs/IMPORTS.md).
+
 
 ## IA: uso, límites y alternativa manual
 
