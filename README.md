@@ -124,5 +124,3 @@ npm run test:sql # Regresión en un PostgreSQL temporal y aislado
 Las pruebas de Node simulan las llamadas a Supabase y al modelo, sin credenciales reales. Cubren autorización, sesiones, errores de API, conciliación de pagos y notas de crédito, precisión monetaria, fechas, proyección, cobranza, escenarios y respuestas inválidas de IA.
 
 La prueba SQL requiere `initdb`, `pg_ctl`, `createdb` y `psql`; se puede indicar su directorio con `NORTIA_PG_BIN`. Crea y elimina su propio clúster local, sin conectarse a Supabase. Nunca ejecutar las fixtures de `supabase/tests/` sobre la base de la aplicación. La comprobación con los CSV originales depende de que estén disponibles localmente.
-
-Para una revisión funcional están el [guion de demo](docs/DEMO.md) y los [casos manuales del Analista](test_ai.md). Las pruebas con proveedores simulados no verifican la disponibilidad del despliegue ni la respuesta del modelo real.
